@@ -4,7 +4,7 @@ from bot.config import Messages as tr
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-@Client.on_message(filters.private & filters.incoming & filters.command(['start']), group=2)
+@Client.on_message(filters.incoming & filters.command(['start']), group=2)
 def _start(client, message):
     client.send_message(chat_id = message.chat.id,
         text = tr.START_MSG.format(message.from_user.mention),
